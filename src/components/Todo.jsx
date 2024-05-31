@@ -1,10 +1,8 @@
-// Path: src/components/Todo.jsx
-
 import React from "react";
 import STYLE from "./Style";
 
 function Todo({ title, description, status }) {
-  const getStatusStyle = (status) => {
+  const getStatusStyle = ({status}) => {
     switch (status) {
       case "DONE":
         return STYLE.done;
@@ -28,7 +26,7 @@ function Todo({ title, description, status }) {
       </div>
       <div
         className={`status ${status}`}
-        style={{ ...STYLE.status, ...getStatusStyle(status) }}
+        style={{ ...STYLE.status, ...getStatusStyle({status}) }}
       >
         {status}
       </div>
